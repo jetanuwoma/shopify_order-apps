@@ -1,0 +1,45 @@
+.narwhal-order {
+  &__wrapper {
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  &__item-wrapper {
+    padding: 1rem;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &__item {
+    position: relative;
+    padding: 1rem 2rem;
+  }
+  
+  &__item-details {
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+
+  &__name-text {
+    color: #7e7d7d;
+    font-size: 1rem;
+  }
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.side-logo-design {
+  position: absolute;
+  left: -2.8rem;
+  top: 35%;
+}
