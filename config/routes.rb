@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  root :to => 'home#index'
+  root 'home#index'
   mount ShopifyApp::Engine, at: '/'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  match 'webhooks/orders_create', via: :post, to: 'orders#orders_create'
+  match 'webhooks/orders_paid', via: :post, to: 'orders#orders_paid'
 end
