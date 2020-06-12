@@ -5,12 +5,12 @@ class OrdersController < ApplicationController
   include ::ShopifyApp::WebhookVerification
 
   def orders_create
-    OrdersCreateJob.perform_now(shop_domain, webhook_payload)
+    OrdersCreateJob.perform_async(shop_domain, webhook_payload)
     head :no_content
   end
 
   def orders_paid
-    OrdersPaidJob.perform_now(shop_domain, webhook_payload)
+    OrdersPaidJob.perform_async(shop_domain, webhook_payload)
     head :no_content
   end
 
