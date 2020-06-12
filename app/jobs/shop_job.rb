@@ -3,7 +3,7 @@
 # ShopJob
 class ShopJob < ActiveJob::Base
   queue_as :default
-  sidekiq_options retry: 5
+  sidekiq_options retry: 1
   around_perform :with_shopify_session
 
   private
@@ -12,6 +12,16 @@ class ShopJob < ActiveJob::Base
     shop.with_shopify_session do
       yield
     end
+  end
+
+  def build_order(webhook)
+    NarwhalOrder.where(order_id: webhook[:id]).first_or_create(
+      {
+        order_id: webhook[:id],
+        order_name: webhook[:order_number],
+        customer: "#{webhook[:customer][:first_name]} #{webhook[:customer][:last_name]}"
+      }
+    )
   end
 
   def shop

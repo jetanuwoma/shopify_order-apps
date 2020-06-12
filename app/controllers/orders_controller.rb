@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       id: webh_params[:id],
       customer: webh_params[:customer],
       line_items: webh_params[:line_items],
-      order_number: webh_params[:order_number],
+      order_number: webh_params[:order_number]
     }.to_json
   end
 
