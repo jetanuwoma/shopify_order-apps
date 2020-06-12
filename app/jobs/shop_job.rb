@@ -2,6 +2,8 @@
 
 # ShopJob
 class ShopJob < ActiveJob::Base
+  queue_as :default
+  sidekiq_options retry: 5
   around_perform :with_shopify_session
 
   private
