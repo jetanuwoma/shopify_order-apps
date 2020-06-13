@@ -1,24 +1,18 @@
-# README
+## Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Via Cloning The Repository:
 
-Things you may want to cover:
+#### Clone the app
+git clone https://github.com/andela-jetanuwoma/shopify_order-apps.git
 
-* Ruby version
+#### Switch to directory
+##### run `$ bundle install`
+#### copy content of .env.sample to .env file
+##### start sidekiq `$ sidekiq`
+#### Run your migrations
+##### `bin/rake db:migrate`
 
-* System dependencies
+#### start server
+##### `$ rails s`
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
