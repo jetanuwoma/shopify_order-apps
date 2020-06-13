@@ -1,4 +1,4 @@
-FactoryBot.define do
+FactoryGirl.define do
   factory :narwhal_order do
     order_id { "MyString" }
     customer { "MyString" }
