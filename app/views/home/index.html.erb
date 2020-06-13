@@ -5,24 +5,22 @@
     });
   </script>
 <% end %>
-<h2>Order</h2>
-
-<ul>
+<% if @orders.any? %>
+<div class="narwhal-order__wrapper">
   <% @orders.each do |order| %>
-    <li>Order</li>
+     <a  class="narwhal-order__item-wrapper" target="_blank" href="https://#{@curr_shop.shopify_domain}/admin/orders/#{order.order_id}" >
+      <div class="narwhal-order__item">
+        <p class="narwhal-order__item-details">
+          <span class="text-bold"><%= order.customer %></span> made a narwhal order.
+        </p>
+        <p class="narwhal-order__name-text">
+          ORDER #<%= order.order_name %>
+        </p>
+        <%= image_tag 'narwal_flag.svg', class: "side-logo-design" %>
+      </div>
+    </a>
   <% end %>
-</ul>
-
-<hr>
-
-<h2>Webhooks</h2>
-
-<% if @webhooks.present? %>
-  <ul>
-    <% @webhooks.each do |webhook| %>
-      <li><%= webhook.topic %> : <%= webhook.address %></li>
-    <% end %>
-  </ul>
+</div>
 <% else %>
-  <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
+  <div class="narwhal-order__wrapper">There is no order.</div>
 <% end %>

@@ -2,6 +2,6 @@
 
 class HomeController < AuthenticatedController
   def index
-    @orders = []
+    @orders = NarwhalOrder.where(shop: curr_shop.id)
   end
 end
