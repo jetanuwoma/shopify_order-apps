@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class OrdersPaidJob < ShopJob
   def perform(shop_domain:, webhook:)
     p "creating order for #{shop_domain}"

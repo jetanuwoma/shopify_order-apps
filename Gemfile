@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'rspec-mocks'
 end
 
 group :development do
@@ -71,3 +72,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "shopify_app", "~> 9.0"
 gem 'webpacker'
 gem 'react-rails'
+gem 'rubocop', require: false
