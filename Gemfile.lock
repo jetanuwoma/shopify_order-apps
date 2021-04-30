@@ -222,7 +222,7 @@ GEM
       tilt
     redis (4.2.1)
     regexp_parser (1.7.1)
-    rexml (3.1.9)
+    rexml (3.2.5)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
